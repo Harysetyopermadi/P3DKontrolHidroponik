@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
 
     $id = $_POST['id'];
     $namapenanam = $_POST['namapenanam'];
+    $kelompokmasyarakat =$_POST['kelompokmasyarakat'];
     $jenistanaman = $_POST['jenistanaman'];
     $jumlahtanaman = $_POST['jumlahtanaman'];
     $tglsemai = $_POST['tglsemai'];
@@ -20,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] =='POST'){
    // $sql = "INSERT INTO users_table (name, email, password) VALUES ('$name', '$email', '$password')";
   // $sql = "INSERT INTO user (name, password) VALUES ('$name', '$password')";
 
-  $sql = "INSERT INTO prediksi (id,namapenanam,jenistanaman,jumlahtanaman,tglsemai,prediksiparalon,prediksipanen,estimasipenjualan) VALUES ('$id','$namapenanam','$jenistanaman','$jumlahtanaman','$tglsemai','$prediksiparalon','$prediksipanen','$estimasipenjualan')";
+  $sql = "INSERT INTO prediksi (id,namapenanam,jenistanaman,jumlahtanaman,tglsemai,prediksiparalon,prediksipanen,estimasipenjualan,kelompokmasyarakat) VALUES ('$id','$namapenanam','$jenistanaman','$jumlahtanaman','$tglsemai','$prediksiparalon','$prediksipanen','$estimasipenjualan','$kelompokmasyarakat')";
 
     if ( mysqli_query($conn, $sql) ) {
         $result["success"] = "1";

@@ -10,13 +10,13 @@
  require_once 'connect.php';
  $id = $_POST['id'];
  //creating a query
- $stmt = $conn->prepare("SELECT seri,id,namapenanam,jenistanaman,jumlahtanaman,tglsemai,prediksiparalon,prediksipanen,estimasipenjualan FROM prediksi WHERE id='$id';");
+ $stmt = $conn->prepare("SELECT seri,id,namapenanam,jenistanaman,jumlahtanaman,tglsemai,prediksiparalon,prediksipanen,estimasipenjualan,kelompokmasyarakat FROM prediksi WHERE id='$id';");
  
  //executing the query 
  $stmt->execute();
  
  //binding results to the query 
- $stmt->bind_result($seri,$id,$namapenanam,$jenistanaman,$jumlahtanaman,$tglsemai,$prediksiparalon,$prediksipanen,$estimasipenjualan);
+ $stmt->bind_result($seri,$id,$namapenanam,$jenistanaman,$jumlahtanaman,$tglsemai,$prediksiparalon,$prediksipanen,$estimasipenjualan,$kelompokmasyarakat);
  
  $products = array(); 
  
@@ -32,6 +32,7 @@
  $temp['prediksiparalon'] = $prediksiparalon; 
  $temp['prediksipanen'] = $prediksipanen; 
  $temp['estimasipenjualan'] = $estimasipenjualan; 
+ $temp['kelompokmasyarakat'] = $kelompokmasyarakat;
  array_push($products, $temp);
  }
  
